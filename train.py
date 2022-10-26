@@ -42,12 +42,10 @@ criterion = nn.MSELoss()
 # モデル
 #model = SRCNN()
 model = UNet_2D()
-#model = Unet()
 
 if opt.cuda:
     model = model.cuda()
     criterion = criterion.cuda()
-
 
 # 学習率
 '''optimizer = optim.Adam([{'params': model.conv1.parameters()},
@@ -132,11 +130,11 @@ for epoch in range(EPOCH):
     
     print('[Epoch {}] Loss: {:.4f}, PSNR: {:.4f} dB'.format(epoch + 1, avg_train_loss, avg_train_psnr))
 
-    train_loss_values.append(avg_train_loss.detach().cpu()) #こっちじゃね?
+    train_loss_values.append(avg_train_loss.detach().cpu())
     train_psnr_values.append(avg_train_psnr)
 
-    # 1000epochごとに下を実行
-    if (epoch + 1) % 100 != 0: continue
+    # 10epochごとに評価
+    if (epoch + 1) % 10 != 0: continue
 
     model.eval()
 
