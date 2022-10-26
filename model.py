@@ -61,7 +61,7 @@ class UpConv(nn.Module):
 class UNet_2D(nn.Module):
     def __init__(self):
         super().__init__()
-        self.TCB1 = TwoConvBlock(3, 64, 64) # cannnel数(3 -> 64 -> 64)
+        self.TCB1 = TwoConvBlock(3, 64, 64) # cannnel (3 -> 64 -> 64)
         self.TCB2 = TwoConvBlock(64, 128, 128)
         self.TCB3 = TwoConvBlock(128, 256, 256)
         self.TCB4 = TwoConvBlock(256, 512, 512)
@@ -72,7 +72,7 @@ class UNet_2D(nn.Module):
         self.TCB9 = TwoConvBlock(128, 64, 64)
         self.maxpool = nn.MaxPool2d(2, stride = 2)
         
-        self.UC1 = UpConv(1024, 512) # cannnel数(1->2)
+        self.UC1 = UpConv(1024, 512) # cannnel (1024 -> 512)
         self.UC2 = UpConv(512, 256) 
         self.UC3 = UpConv(256, 128) 
         self.UC4= UpConv(128, 64)
