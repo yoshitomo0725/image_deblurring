@@ -70,8 +70,6 @@ test_loader = DataLoader(test_set, batch_size = 1, shuffle=False)
 criterion = nn.MSELoss()
 device = torch.device("cuda:{}".format(gpu_num) if torch.cuda.is_available() else "cpu")
 
-# deivceを使用
-#model = ResnetGenerator()
 model = model.cuda(device)
 criterion = criterion.cuda(device)
 
@@ -109,7 +107,6 @@ def plot_graph_train(values1, label1, name):
     plt.savefig(name + "_train.png")
     plt.clf()
 
-# 使用するGPUの表示
 print('-----------------------')
 print("Using cuda:{}".format(gpu_num) if torch.cuda.is_available() else "Using CPU")
 print('BATCH:{}  EPOCH:{}'.format(args.batch, args.epoch))
