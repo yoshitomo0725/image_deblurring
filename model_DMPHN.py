@@ -112,9 +112,9 @@ class Decoder(nn.Module):
         x = self.layer24(x)
         return x
     
-class DMPHN_Unet(nn.Module):
+class DMPHN_base(nn.Module):
     def __init__(self):
-        super(DMPHN_Unet, self).__init__()
+        super(DMPHN_base, self).__init__()
         #Conv1
         self.layer1 = nn.Conv2d(3, 32, kernel_size=3, padding=1)
         self.layer2 = nn.Sequential(
