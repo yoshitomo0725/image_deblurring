@@ -12,14 +12,15 @@ from math import log10
 import matplotlib.pyplot as plt
 import numpy as np
 
-from model import SRCNN, UNet_2D, Unet, Win5RB, ResnetGenerator
+from model import SRCNN, UNet_2D, Win5RB
+from model_DMPHN import DMPHN_base
 #from deblurgan_gene import ResnetGenerator, UnetGenerator
 from dataset import GoProDataset
 from dataset_DMPHN import GoProDataset_DMPHN
 
 
 # setting
-model = ResnetGenerator()
+model = DMPHN_base()
 gpu_num = 0 # 使用するGPUを設定
 
 
