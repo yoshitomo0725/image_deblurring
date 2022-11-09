@@ -68,7 +68,7 @@ class GoProDataset_DMPHN(Dataset):
         
 
 """
-train_dataset = GoProDataset2(
+train_dataset = GoProDataset_DMPHN(
             blur_image_files = './data/GoPro/train_blur_file.txt',
             sharp_image_files = './data/GoPro/train_sharp_file.txt',
             root_dir = './data/GoPro/',
