@@ -19,15 +19,6 @@ def fill_circle(image, center, radius):
         condition = np.tile(condition.reshape(condition.shape + (1,)), (1, 1, image.shape[2]))
     return np.where(condition, 1, image)
 
-def array_to_img(x):
-    '''
-    データを [0, 255] で表される画像に変換する。
-    '''
-    #x += max(-np.min(x), 0)  # 非負の値にする。
-    #x_max = np.max(x)  # [0, 1] で正規化する。
-    #if x_max != 0: x /= x_max
-    x *= 255  # [0, 255] にする。
-    return x.astype(np.uint8)
         
 class HideDataset_kpt(Dataset):
     def __init__(self, blur_image_files, sharp_image_files, kpt_files, root_dir, 
