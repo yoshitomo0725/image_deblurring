@@ -29,3 +29,5 @@ class Keypoint_Loss(nn.Module):
         #    keypoint_loss = torch.sum(keypoint_loss_) / torch.count_nonzero(keypoint_loss_)
         keypoint_loss = torch.sum(keypoint_loss_) / torch.numel(keypoint_loss_)
         return keypoint_loss
+
+    
