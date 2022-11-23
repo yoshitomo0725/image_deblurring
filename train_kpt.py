@@ -2,27 +2,18 @@ import torch
 from torch import nn
 from torch import optim
 from torch.utils.data import DataLoader
-#from torch.autograd import Variable
-#from torchvision.utils import save_image
 from torchvision import transforms, datasets
 
-
-#import os
-#from pathlib import Path
 from math import log10
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
 from tqdm import tqdm
 
-#from model import SRCNN, UNet_2D, Unet, Win5RB, ResnetGenerator
 from model_DMPHN import DMPHN_Unet
-
-#from dataset import GoProDataset
 #from dataset_DMPHN import GoProDataset_DMPHN, HIDEDataset_DMPHN
 from dataset_keypoint import HideDataset_kpt
 from loss import VGGLoss, Keypoint_Loss
-
 
 # setting
 model = DMPHN_Unet()
